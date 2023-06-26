@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import * as React from 'react';
+import { Component } from 'react';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Slider from 'rc-slider';
@@ -11,16 +12,18 @@ class Navbar extends Component {
     this.state = {
       format: "hex",
     }
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
   handleChange(evt) {
+    console.log(evt.target.value);
     this.setState = {
       format: evt.target.value
     }
-    this.props.handleChange(this.state.format);
+    this.props.handleChange(evt.target.value);
   }
   render() {
     const { level, changeLevel, handleChange, format } = this.props;
+    const defaultFormat = this.state.format;
     return (
       <header className="Navbar">
         <div className="Navbar-logo">
@@ -31,10 +34,10 @@ class Navbar extends Component {
           <Slider defaultValue={level} min={100} max={900} step={100} onChange={changeLevel} />
         </div>
         <div className="Navbar-select-container">
-          <Select value={format} onChange={handleChange}>
-            <MenuItem value="hex">Hex #FFFFFF</MenuItem>
-            <MenuItem value="rgb">rgb (255,255,255)</MenuItem>
-            <MenuItem value="rgba">rgba (255,255,255,1)</MenuItem>
+          <Select defaultValue={defaultFormat} value={format} onChange={handleChange}>
+            <MenuItem name="hex" value="hex">Hex #FFFFFF</MenuItem>
+            <MenuItem name="rgb" value="rgb">rgb (255,255,255)</MenuItem>
+            <MenuItem name="rgba" value="rgba">rgba (255,255,255,1)</MenuItem>
           </Select>
         </div>
       </header>

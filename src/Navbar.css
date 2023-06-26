@@ -1,6 +1,8 @@
 .Navbar {
   display: flex;
   align-items: center;
+  height: 50px;
+  justify-content: space-between;
 }
 
 .Navbar-slider {
@@ -51,8 +53,15 @@
 }
 
 .Navbar-level {
+  position: relative;
   display: flex;
   margin: 0 5px 0 30px;
   font-weight: 300;
   font-size: 1.2rem;
+}
+
+.Navbar-select-container {
+  display: flex;
+  position: relative;
+  height: 40px;
 }

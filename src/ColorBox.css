@@ -39,21 +39,30 @@
   /* bottom: -155px; */
   color: #1a1a1a;
   letter-spacing: 1px;
-  text-transform: capitalize;
   font-size: .6rem;
 }
 
 .ColorBox-see-more {
-  background: rgba(255,255,255,0.2);
   position: relative;
-  left: 10px;
-  bottom: -105px;
+  display: flex;
+  justify-content: right;
+  right: 10px;
+  bottom: -110px;
   color: #1a1a1a;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: .6rem;
   border: none;
   pointer: cursor;
+  scale: 1;
+  transition: all .2s ease-in-out;
+}
+
+.ColorBox-see-more:hover {
+  scale: 1.1;
+  transform: translateX(-5px);
+  text-shadow: 1px 1px 10px rgba(255,255,255,1);
+  transition: all .2s ease-in-out;
 }
 
 .ColorBox-copy-overlay {
@@ -87,7 +96,6 @@
   transform: scale(0.1);
   opacity: 0;
   color: #f1f1f1;
-  text-transform: capitalize;
 }
 
 .ColorBox-copy-message.show {
@@ -102,5 +110,4 @@
   margin-top: 0;
   font-size: 2rem;
   font-weight: 100;
-  text-transform: capitalize;
 }
