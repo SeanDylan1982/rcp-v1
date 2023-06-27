@@ -24,11 +24,11 @@ class App extends Component {
     return (
       <div className="App">
         <Routes>
-          <Route 
-          exact 
-          path="/" 
-          element={<Home />} 
-          render={() => <Home /> } />
+          <Route
+            exact
+            path="/"
+            element={<Home />}
+            render={<Home />} />
           <Route 
           exact 
           path="/palette/:id" 
@@ -38,7 +38,7 @@ class App extends Component {
           render={routeProps => (
           <Pallette 
             pallette={generatePallette(
-              this.findPallette(routeProps.match.params.id)
+              this.findPallette(url)
             )}
           />
           )}
