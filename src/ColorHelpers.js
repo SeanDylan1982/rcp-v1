@@ -3,7 +3,8 @@ import Home from './Home';
 const levels = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 
 function generatePallette(starterPallette) {
-  if (window.location.pathname === '/') {
+  const url = window.location.pathname;
+  if (url === '/' || url === '') {
     return <Home />;
   }
   let newPallette = {
